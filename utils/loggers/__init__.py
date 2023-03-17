@@ -123,7 +123,7 @@ class Loggers():
             self.clearml = None
 
         # Comet
-        if comet_ml and 'comet' in self.include:
+        if comet_ml and 'comet' in self.include and False:
             if isinstance(self.opt.resume, str) and self.opt.resume.startswith("comet://"):
                 run_id = self.opt.resume.split("/")[-1]
                 self.comet_logger = CometLogger(self.opt, self.hyp, run_id=run_id)
